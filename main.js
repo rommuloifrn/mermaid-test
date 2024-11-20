@@ -1,21 +1,13 @@
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+import { renderMermaids } from './diagrams.js';
+//mermaid.initialize({ startOnLoad: false });
 
-mermaid.initialize({ startOnLoad: false });
-
-/*var target = document.getElementById('my-diagram')
-const graphDefinition = 'graph TB\na-->b';
-
-mermaid.render('my-diagram', graphDefinition, target);*/
-
-//mermaid.run()
-mafunc()
-
-export default function mafunc() {
-    const target = document.getElementById('my-diagram');
-    target.innerHTML = 'graph TB\nb-->a';
-    mermaid.run();
+try {
+    renderMermaids();
+} catch (error) {
+    console.log(error);
+    
 }
 
-function test() {
-    console.log("testado!");
-}
+
+const target = document.getElementById("my-loved-button")
+target.addEventListener("click", renderMermaids(), false)
